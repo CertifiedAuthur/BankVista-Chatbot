@@ -1,0 +1,10 @@
+runtime: python39  # Use the appropriate runtime, e.g., python39 or python310
+entrypoint: uvicorn main:app --host 0.0.0.0 --port $PORT
+
+handlers:
+  - url: /static
+    static_dir: static/
+
+  - url: /.*
+    script: auto
+
